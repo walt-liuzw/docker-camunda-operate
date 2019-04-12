@@ -7,7 +7,7 @@ The General Terms and Conditions for the Operate Trial Version are available her
 
 ## Login
 
-To login into operate use the credentials:
+To login into Operate, use the credentials:
 
 - User: demo
 - Password: demo
@@ -23,7 +23,7 @@ To configure operate mount a custom `application.yml` to the location
 `/usr/local/operate/config/application.yml` inside the container.
 
 ```
-docker run -d --name operate -v $PWD/application.yml:/usr/local/operate/config/application.yml camunda/operate:latest
+docker run -d --name operate -p 8080:8080 -v $PWD/application.yml:/usr/local/operate/config/application.yml camunda/operate:latest
 ```
 
 Or set environment variables on startup, the most important ones are:
@@ -67,3 +67,7 @@ logging:
 #Spring Boot Actuator endpoints to be exposed
 management.endpoints.web.exposure.include: health,info,conditions,configprops,prometheus
 ```
+
+## Repository
+
+https://github.com/zeebe-io/docker-camunda-operate
