@@ -7,7 +7,7 @@ ARG OPERATE_VERSION=1.0.0-RC2
 WORKDIR /tmp/operate
 
 # download operate
-RUN wget -O - https://github.com/zeebe-io/zeebe/releases/download/${ZEEBE_VERSION}/camunda-operate-${OPERATE_VERSION}.tar.gz | tar xzvf -
+RUN wget -O - https://github.com/zeebe-io/zeebe/releases/download/${ZEEBE_VERSION}/camunda-operate-distro-${OPERATE_VERSION}.tar.gz | tar xzvf -
 COPY notice.txt notice.txt
 RUN sed -i '/^exec /i cat /usr/local/operate/notice.txt' bin/operate
 
